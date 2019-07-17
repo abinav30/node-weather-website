@@ -6,7 +6,7 @@ let weather=document.querySelector("#weather");
 weatherSelector.addEventListener('submit',(e)=>{
     e.preventDefault(); //Default behavious here is to reload the page after a search query is used
     const location=search.value;
-    fetch(`http://localhost:3249/weather?address=${location}`).then((response)=>{
+    fetch(`/weather?address=${location}`).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
             address.textContent=data.error;
@@ -24,4 +24,4 @@ weatherSelector.addEventListener('submit',(e)=>{
 
 })
 
-
+/* http://localhost:3249*/

@@ -19,6 +19,7 @@ let viewsPath=path.join(__dirname, "../webpage-templates/views");
 let partialsPath=path.join(__dirname,"../webpage-templates/partials");
 
 const app=express();
+const port = process.env.PORT||3249;
 
 //Static means that the assets in the directory provided here are considered static and do not change when we refresh a page
 //If we need to create dynamic pages, we need a diffferent approach
@@ -123,6 +124,6 @@ app.get('*',(req,res)=>{
 })
 
 //This here sets the server up and the server starts listening on port no:3249;
-app.listen(3249, ()=>{
-    console.log("server up and running on port 3249");
+app.listen(port, ()=>{
+    console.log("server up and running on port " + port);
 });
